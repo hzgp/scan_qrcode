@@ -23,7 +23,7 @@ class DecodeHandler internal constructor(activity: CaptureActivity, hints: Map<D
             Constant.DECODE -> decode(message.obj as ByteArray, message.arg1, message.arg2)
             Constant.QUIT -> {
                 running = false
-                Looper.myLooper().quit()
+                Looper.myLooper()?.quit()
             }
         }
     }

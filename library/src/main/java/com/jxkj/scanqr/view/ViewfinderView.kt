@@ -214,28 +214,29 @@ class ViewfinderView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int)
         var corWidth = (corLength * 0.2).toInt()
         corWidth = if (corWidth > 15) 15 else corWidth
 
-        reactPaint?:return
-        /*角在线外*/
-        // 左上角
-        canvas.drawRect((frame.left - corWidth).toFloat(), frame.top.toFloat(), frame.left.toFloat(), (frame.top
-                + corLength).toFloat(), reactPaint)
-        canvas.drawRect((frame.left - corWidth).toFloat(), (frame.top - corWidth).toFloat(), (frame.left
-                + corLength).toFloat(), frame.top.toFloat(), reactPaint)
-        // 右上角
-        canvas.drawRect(frame.right.toFloat(), frame.top.toFloat(), (frame.right + corWidth).toFloat(), (
-                frame.top + corLength).toFloat(), reactPaint)
-        canvas.drawRect((frame.right - corLength).toFloat(), (frame.top - corWidth).toFloat(), (
-                frame.right + corWidth).toFloat(), frame.top.toFloat(), reactPaint)
-        // 左下角
-        canvas.drawRect((frame.left - corWidth).toFloat(), (frame.bottom - corLength).toFloat(),
+        reactPaint?.let { reactPaint->
+            /*角在线外*/
+            // 左上角
+            canvas.drawRect((frame.left - corWidth).toFloat(), frame.top.toFloat(), frame.left.toFloat(), (frame.top
+                    + corLength).toFloat(), reactPaint)
+            canvas.drawRect((frame.left - corWidth).toFloat(), (frame.top - corWidth).toFloat(), (frame.left
+                    + corLength).toFloat(), frame.top.toFloat(), reactPaint)
+            // 右上角
+            canvas.drawRect(frame.right.toFloat(), frame.top.toFloat(), (frame.right + corWidth).toFloat(), (
+                    frame.top + corLength).toFloat(), reactPaint)
+            canvas.drawRect((frame.right - corLength).toFloat(), (frame.top - corWidth).toFloat(), (
+                    frame.right + corWidth).toFloat(), frame.top.toFloat(), reactPaint)
+            // 左下角
+            canvas.drawRect((frame.left - corWidth).toFloat(), (frame.bottom - corLength).toFloat(),
                 frame.left.toFloat(), frame.bottom.toFloat(), reactPaint)
-        canvas.drawRect((frame.left - corWidth).toFloat(), frame.bottom.toFloat(), (frame.left
-                + corLength).toFloat(), (frame.bottom + corWidth).toFloat(), reactPaint)
-        // 右下角
-        canvas.drawRect(frame.right.toFloat(), (frame.bottom - corLength).toFloat(), (frame.right
-                + corWidth).toFloat(), frame.bottom.toFloat(), reactPaint)
-        canvas.drawRect((frame.right - corLength).toFloat(), frame.bottom.toFloat(), (frame.right
-                + corWidth).toFloat(), (frame.bottom + corWidth).toFloat(), reactPaint)
+            canvas.drawRect((frame.left - corWidth).toFloat(), frame.bottom.toFloat(), (frame.left
+                    + corLength).toFloat(), (frame.bottom + corWidth).toFloat(), reactPaint)
+            // 右下角
+            canvas.drawRect(frame.right.toFloat(), (frame.bottom - corLength).toFloat(), (frame.right
+                    + corWidth).toFloat(), frame.bottom.toFloat(), reactPaint)
+            canvas.drawRect((frame.right - corLength).toFloat(), frame.bottom.toFloat(), (frame.right
+                    + corWidth).toFloat(), (frame.bottom + corWidth).toFloat(), reactPaint)
+        }
     }
 
     /**
