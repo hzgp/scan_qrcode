@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.jxkj.scanqr">
+   <uses-permission android:name="android.permission.VIBRATE"/>
+	<application>
+		<activity android:name=".android.CaptureActivity"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait"
+			/>
+	</application>
+</manifest>

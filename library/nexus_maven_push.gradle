@@ -1,0 +1,26 @@
+apply plugin: 'maven'
+
+configurations {
+  deployerJars
+}
+
+repositories {
+  mavenCentral()
+}
+
+uploadArchives {
+  repositories {
+    mavenDeployer {
+      repository(url: "http://192.168.1.18:8081/nexus/content/repositories/jx_qr_code/") {
+        authentication(userName: "admin", password: "admin123")
+      }
+      pom.project {
+        version '1.0.2'
+        artifactId 'jx_qr_code'
+        groupId 'com.jxkj.qrcode'
+        packaging 'aar'
+        description 'library for android'
+      }
+    }
+  }
+}
